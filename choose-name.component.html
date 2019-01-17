@@ -1,0 +1,103 @@
+<div class="col-xs-11">
+    <div class="form">
+        <label  class="name" for="name" style="margin: 1%; color:"green">Enter Name: </label>
+        <input #name ngModel name="name" (keyup.enter)="onAddName($event)" type="text" class="form-group" >
+        <button class="add" style="margin: 1%;" type="submit" (click)="onAddName($event)">Add</button>
+        <style>
+          body {
+                height: 100vh;
+                background: #101028;
+          }
+          .form-group {
+            background: none;
+            color: #ccc;
+            border:2px solid #fff;
+            border-radius: 4px;
+            transition: .6s;
+            overflow: hidden;
+            position: absolute;
+            left: 7.5%
+          }
+          .add {
+            font-family: Trebuchet MS;
+            color: #fff;
+            position: absolute;
+            left: 19.5%
+          }
+          .name {
+            color: #ffff;
+            font-family: Trebuchet MS;
+
+          }
+
+          button {
+                position: absolute;
+                top:0.4%;
+                left: 21%;
+                transform: translate(-50%, -50%);
+          }
+
+          button {
+                background: none;
+                color: #ccc;
+                width: 90px;
+                height: 25px;
+                border: 2px solid #1189F2;
+                font-size: 18px;
+                border-radius: 8px;
+                transition: .6s;
+                overflow: hidden;
+          }
+
+          button:focus {
+                outline: none;
+          }
+
+          button:before{
+                content: '';
+                display: block;
+                position: absolute;
+                background: rgba(255,255,255,.5);
+                width: 60px;
+                height: 100%;
+                left: 0;
+                top: 0;
+                opacity: .5;
+                filter: blur(30px);
+                transform: translateX(-130px) skewX(-15deg);
+          }
+
+          button:after{
+                content: '';
+                display: block;
+                position: absolute;
+                background: rgba(255,255,255,.2);
+                width: 30px;
+                height: 100%;
+                left: 30px;
+                top: 0;
+                opacity: 0;
+                filter: blur(30px);
+                transform: translateX(-100px) scaleX(-15deg);
+          }
+
+          button:hover {
+                background: #1189F2;
+                cursor: pointer;
+          }
+
+          button:hover:before {
+                transform: translateX(300px) skewX(-15deg);
+                opacity: .6;
+                transition: .7s;
+          }
+
+          button:hover:after {
+             transform: translateX(300px) skewX(-15deg);
+              opacity: 1;
+              transition: .7s;
+          }
+          <style>
+    </div>
+</div>
+<app-score *ngFor="let x of names" [(newN)]="newName"></app-score>
