@@ -1,6 +1,6 @@
 <div class="col-xs-11">
 <ul>
-  <label> {{ newN }} </label><p>{{user1}}</p>
+  <label class="newn"> {{ newN }} </label><p class="user">{{user1}}</p>
   <button class="button" (click)="goal()">GOAL</button>
   <button class="button2" (click)="reset()">Reset</button>
   <style>
@@ -12,9 +12,15 @@
 
     body {
           height: 100vh;
-          background: #151519;
+          background: #101028;
     }
 
+    .user {
+    color: #fff;
+    }
+    .newn {
+    color: #fff;
+    }
     .button {
           position: absolute;
           top: 12.8%;
